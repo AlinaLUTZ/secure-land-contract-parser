@@ -87,13 +87,13 @@ def anonymize_contract(text: str) -> str:
 
 def main():
     if len(sys.argv) != 2:
-        print("❌ Использование: python secure_land_contract_parser.py <договор.pdf>")
+        print(" Использование: python secure_land_contract_parser.py <договор.pdf>")
         print("   Поддерживаются: .pdf, .docx")
         sys.exit(1)
 
     input_path = Path(sys.argv[1])
     if not input_path.exists():
-        print(f"❌ Файл не найден: {input_path}")
+        print(f" Файл не найден: {input_path}")
         sys.exit(1)
 
     try:
@@ -115,11 +115,11 @@ def main():
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(header + clean_text)
 
-        print(f"✅ Готово! Результат: {output_path.name}")
-        print("\n💡 Этот файл можно безопасно передавать в ИИ-анализатор.")
+        print(f" Готово! Результат: {output_path.name}")
+        print("\n Этот файл можно безопасно передавать в ИИ-анализатор.")
 
     except Exception as e:
-        print(f"❌ Ошибка: {e}", file=sys.stderr)
+        print(f" Ошибка: {e}", file=sys.stderr)
         sys.exit(1)
 
 
